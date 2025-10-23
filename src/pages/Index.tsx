@@ -6,7 +6,7 @@ import Icon from '@/components/ui/icon';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 
-type LocationType = 'gate' | 'cafe' | 'toilet' | 'escalator' | 'stairs' | 'info' | 'current' | 'checkin' | 'security' | 'duty-free' | 'pharmacy' | 'waiting';
+type LocationType = 'gate' | 'cafe' | 'toilet' | 'escalator' | 'stairs' | 'info' | 'current' | 'checkin' | 'security' | 'duty-free' | 'pharmacy' | 'waiting' | 'vip';
 
 interface Location {
   id: string;
@@ -24,37 +24,33 @@ interface RouteStep {
 }
 
 const locations: Location[] = [
-  { id: 'current', name: 'Вы здесь', type: 'current', x: 15, y: 82, floor: 1 },
-  { id: 'info-1', name: 'Информация', type: 'info', x: 22, y: 78, floor: 1 },
-  { id: 'cafe-starbucks', name: 'Starbucks', type: 'cafe', x: 18, y: 70, floor: 1 },
-  { id: 'toilet-1', name: 'Туалет М/Ж', type: 'toilet', x: 28, y: 73, floor: 1 },
-  { id: 'escalator-1', name: 'Эскалатор ↑', type: 'escalator', x: 35, y: 68, floor: 1 },
-  { id: 'cafe-burger', name: 'Burger King', type: 'cafe', x: 32, y: 60, floor: 1 },
-  { id: 'stairs-1', name: 'Лестница', type: 'stairs', x: 42, y: 63, floor: 1 },
-  { id: 'toilet-2', name: 'Туалет', type: 'toilet', x: 48, y: 56, floor: 1 },
-  { id: 'info-2', name: 'Стойка информации', type: 'info', x: 45, y: 48, floor: 1 },
-  { id: 'duty-free', name: 'Duty Free', type: 'duty-free', x: 55, y: 50, floor: 1 },
-  { id: 'cafe-costa', name: 'Costa Coffee', type: 'cafe', x: 62, y: 44, floor: 1 },
-  { id: 'pharmacy', name: 'Аптека', type: 'pharmacy', x: 58, y: 36, floor: 1 },
-  { id: 'toilet-3', name: 'Туалет', type: 'toilet', x: 68, y: 38, floor: 1 },
-  { id: 'waiting', name: 'Зона ожидания', type: 'waiting', x: 75, y: 32, floor: 1 },
-  { id: 'gate-b15', name: 'Выход B15', type: 'gate', x: 82, y: 25, floor: 1 },
+  { id: 'current', name: 'Вы здесь', type: 'current', x: 10, y: 50, floor: 1 },
+  { id: 'gate-a', name: 'Выходы A1-A6', type: 'gate', x: 10, y: 90, floor: 1 },
+  { id: 'gate-b', name: 'Выходы Б1-Б6', type: 'gate', x: 10, y: 20, floor: 1 },
+  { id: 'toilet-1', name: 'Туалет', type: 'toilet', x: 10, y: 15, floor: 1 },
+  { id: 'gate-c', name: 'Выходы С1-С10', type: 'gate', x: 10, y: 10, floor: 1 },
+  { id: 'toilet-2', name: 'Туалет', type: 'toilet', x: 30, y: 10, floor: 1 },
+  { id: 'toilet-3', name: 'Туалет', type: 'toilet', x: 50, y: 10, floor: 1 },
+  { id: 'toilet-4', name: 'Туалет', type: 'toilet', x: 70, y: 10, floor: 1 },
+  { id: 'gate-e', name: 'Выходы Е1-Е10', type: 'gate', x: 90, y: 10, floor: 1 },
+  { id: 'toilet-5', name: 'Туалет', type: 'toilet', x: 90, y: 15, floor: 1 },
+  { id: 'gate-f', name: 'Выходы F1-F6', type: 'gate', x: 90, y: 20, floor: 1 },
+  { id: 'gate-g', name: 'Выходы G1-G5', type: 'gate', x: 90, y: 90, floor: 1 },
+  { id: 'vip', name: 'VIP-зал', type: 'vip', x: 85, y: 90, floor: 1 },
 ];
 
 const routeSteps: RouteStep[] = [
-  { instruction: 'Идите прямо по главному коридору в сторону стойки информации', distance: '50 м', icon: 'ArrowUp' },
-  { instruction: 'Пройдите мимо Starbucks слева', distance: '60 м', icon: 'ArrowRight' },
-  { instruction: 'Туалет будет справа, продолжайте движение', distance: '45 м', icon: 'ArrowUp' },
-  { instruction: 'Поднимитесь на эскалаторе на второй уровень', distance: '40 м', icon: 'MoveUp' },
-  { instruction: 'После эскалатора Burger King будет слева', distance: '50 м', icon: 'ArrowRight' },
-  { instruction: 'Пройдите мимо лестницы справа', distance: '35 м', icon: 'ArrowUp' },
-  { instruction: 'Туалет слева, стойка информации впереди', distance: '40 м', icon: 'ArrowRight' },
-  { instruction: 'Поверните налево у стойки информации', distance: '30 м', icon: 'ArrowLeft' },
-  { instruction: 'Пройдите мимо Duty Free справа', distance: '45 м', icon: 'ArrowUp' },
-  { instruction: 'Costa Coffee слева, продолжайте прямо', distance: '50 м', icon: 'ArrowRight' },
-  { instruction: 'Аптека будет справа, двигайтесь к зоне вылета', distance: '40 м', icon: 'ArrowUp' },
-  { instruction: 'Пройдите через зону ожидания', distance: '35 м', icon: 'ArrowRight' },
-  { instruction: 'Выход B15 будет справа по коридору', distance: '30 м', icon: 'Target' },
+  { instruction: 'Пройдите прямо по коридору 30 метров', distance: '30 м', icon: 'ArrowUp' },
+  { instruction: 'Поверните налево у указателя', distance: '15 м', icon: 'ArrowLeft' },
+  { instruction: 'Спуститесь по эскалатору на нижний уровень', distance: '20 м', icon: 'MoveDown' },
+  { instruction: 'Идите прямо до стойки регистрации', distance: '45 м', icon: 'ArrowUp' },
+  { instruction: 'Пройдите через зону безопасности', distance: '25 м', icon: 'ArrowRight' },
+  { instruction: 'Поверните направо к выходам на посадку', distance: '35 м', icon: 'ArrowRight' },
+  { instruction: 'Следуйте по коридору мимо Duty Free слева', distance: '50 м', icon: 'ArrowUp' },
+  { instruction: 'Туалет будет справа, продолжайте движение', distance: '30 м', icon: 'ArrowUp' },
+  { instruction: 'Поверните налево у зоны ожидания', distance: '20 м', icon: 'ArrowLeft' },
+  { instruction: 'Пройдите прямо до выхода на посадку', distance: '40 м', icon: 'ArrowUp' },
+  { instruction: 'Ваш выход находится впереди справа', distance: '15 м', icon: 'Target' },
 ];
 
 const getLocationColor = (type: LocationType): string => {
@@ -71,6 +67,7 @@ const getLocationColor = (type: LocationType): string => {
     'duty-free': '#f97316',
     pharmacy: '#10b981',
     waiting: '#8b5cf6',
+    vip: '#d946ef',
   };
   return colorMap[type];
 };
@@ -83,9 +80,29 @@ export default function Index() {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    if (query.toLowerCase().includes('b15') || query.toLowerCase().includes('выход b')) {
-      const destination = locations.find(loc => loc.id === 'gate-b15');
-      setSelectedDestination(destination || null);
+    const queryLower = query.toLowerCase();
+    let destination = null;
+    
+    if (queryLower.includes('а') || queryLower.includes('a1')) {
+      destination = locations.find(loc => loc.id === 'gate-a');
+    } else if (queryLower.includes('б') || queryLower.includes('b1')) {
+      destination = locations.find(loc => loc.id === 'gate-b');
+    } else if (queryLower.includes('с') || queryLower.includes('c1')) {
+      destination = locations.find(loc => loc.id === 'gate-c');
+    } else if (queryLower.includes('е') || queryLower.includes('e1')) {
+      destination = locations.find(loc => loc.id === 'gate-e');
+    } else if (queryLower.includes('f') || queryLower.includes('ф')) {
+      destination = locations.find(loc => loc.id === 'gate-f');
+    } else if (queryLower.includes('g') || queryLower.includes('г')) {
+      destination = locations.find(loc => loc.id === 'gate-g');
+    } else if (queryLower.includes('vip') || queryLower.includes('вип')) {
+      destination = locations.find(loc => loc.id === 'vip');
+    } else if (queryLower.includes('туалет')) {
+      destination = locations.find(loc => loc.type === 'toilet');
+    }
+    
+    if (destination) {
+      setSelectedDestination(destination);
       setShowRoute(true);
     } else {
       setShowRoute(false);
@@ -95,22 +112,14 @@ export default function Index() {
 
   const currentLocation = locations.find(loc => loc.type === 'current')!;
 
-  const pathPoints = showRoute ? [
+  const pathPoints = showRoute && selectedDestination ? [
     currentLocation,
-    locations.find(l => l.id === 'info-1')!,
-    locations.find(l => l.id === 'cafe-starbucks')!,
-    locations.find(l => l.id === 'toilet-1')!,
-    locations.find(l => l.id === 'escalator-1')!,
-    locations.find(l => l.id === 'cafe-burger')!,
-    locations.find(l => l.id === 'stairs-1')!,
-    locations.find(l => l.id === 'toilet-2')!,
-    locations.find(l => l.id === 'info-2')!,
-    locations.find(l => l.id === 'duty-free')!,
-    locations.find(l => l.id === 'cafe-costa')!,
-    locations.find(l => l.id === 'pharmacy')!,
-    locations.find(l => l.id === 'toilet-3')!,
-    locations.find(l => l.id === 'waiting')!,
-    selectedDestination!,
+    { ...currentLocation, x: currentLocation.x + 15, y: currentLocation.y },
+    { ...currentLocation, x: currentLocation.x + 15, y: currentLocation.y - 10 },
+    { ...currentLocation, x: currentLocation.x + 30, y: currentLocation.y - 10 },
+    { ...currentLocation, x: selectedDestination.x - 15, y: currentLocation.y - 10 },
+    { ...selectedDestination, x: selectedDestination.x - 15, y: selectedDestination.y },
+    selectedDestination,
   ] : [];
 
   const pathD = pathPoints.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
@@ -154,7 +163,7 @@ export default function Index() {
 
           {!searchQuery && (
             <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
-              {['Выход B15', 'Туалет', 'Кафе', 'Duty Free'].map((quick) => (
+              {['Выходы А', 'Выходы Б', 'Выходы Е', 'VIP-зал', 'Туалет'].map((quick) => (
                 <Button
                   key={quick}
                   variant="outline"
