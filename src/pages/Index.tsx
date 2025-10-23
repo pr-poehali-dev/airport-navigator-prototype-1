@@ -24,21 +24,21 @@ interface RouteStep {
 }
 
 const locations: Location[] = [
-  { id: 'current', name: 'Вы здесь', type: 'current', x: 12, y: 85, floor: 1 },
-  { id: 'info-1', name: 'Информация', type: 'info', x: 18, y: 78, floor: 1 },
-  { id: 'cafe-starbucks', name: 'Starbucks', type: 'cafe', x: 25, y: 72, floor: 1 },
-  { id: 'toilet-1', name: 'Туалет М/Ж', type: 'toilet', x: 32, y: 66, floor: 1 },
-  { id: 'escalator-1', name: 'Эскалатор ↑', type: 'escalator', x: 38, y: 59, floor: 1 },
-  { id: 'cafe-burger', name: 'Burger King', type: 'cafe', x: 44, y: 53, floor: 1 },
-  { id: 'stairs-1', name: 'Лестница', type: 'stairs', x: 50, y: 47, floor: 1 },
-  { id: 'toilet-2', name: 'Туалет', type: 'toilet', x: 56, y: 41, floor: 1 },
-  { id: 'info-2', name: 'Стойка информации', type: 'info', x: 62, y: 36, floor: 1 },
-  { id: 'duty-free', name: 'Duty Free', type: 'duty-free', x: 67, y: 31, floor: 1 },
-  { id: 'cafe-costa', name: 'Costa Coffee', type: 'cafe', x: 72, y: 26, floor: 1 },
-  { id: 'pharmacy', name: 'Аптека', type: 'pharmacy', x: 77, y: 21, floor: 1 },
-  { id: 'toilet-3', name: 'Туалет', type: 'toilet', x: 82, y: 16, floor: 1 },
-  { id: 'waiting', name: 'Зона ожидания', type: 'waiting', x: 86, y: 12, floor: 1 },
-  { id: 'gate-b15', name: 'Выход B15', type: 'gate', x: 90, y: 8, floor: 1 },
+  { id: 'current', name: 'Вы здесь', type: 'current', x: 15, y: 82, floor: 1 },
+  { id: 'info-1', name: 'Информация', type: 'info', x: 22, y: 78, floor: 1 },
+  { id: 'cafe-starbucks', name: 'Starbucks', type: 'cafe', x: 18, y: 70, floor: 1 },
+  { id: 'toilet-1', name: 'Туалет М/Ж', type: 'toilet', x: 28, y: 73, floor: 1 },
+  { id: 'escalator-1', name: 'Эскалатор ↑', type: 'escalator', x: 35, y: 68, floor: 1 },
+  { id: 'cafe-burger', name: 'Burger King', type: 'cafe', x: 32, y: 60, floor: 1 },
+  { id: 'stairs-1', name: 'Лестница', type: 'stairs', x: 42, y: 63, floor: 1 },
+  { id: 'toilet-2', name: 'Туалет', type: 'toilet', x: 48, y: 56, floor: 1 },
+  { id: 'info-2', name: 'Стойка информации', type: 'info', x: 45, y: 48, floor: 1 },
+  { id: 'duty-free', name: 'Duty Free', type: 'duty-free', x: 55, y: 50, floor: 1 },
+  { id: 'cafe-costa', name: 'Costa Coffee', type: 'cafe', x: 62, y: 44, floor: 1 },
+  { id: 'pharmacy', name: 'Аптека', type: 'pharmacy', x: 58, y: 36, floor: 1 },
+  { id: 'toilet-3', name: 'Туалет', type: 'toilet', x: 68, y: 38, floor: 1 },
+  { id: 'waiting', name: 'Зона ожидания', type: 'waiting', x: 75, y: 32, floor: 1 },
+  { id: 'gate-b15', name: 'Выход B15', type: 'gate', x: 82, y: 25, floor: 1 },
 ];
 
 const routeSteps: RouteStep[] = [
